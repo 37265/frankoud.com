@@ -37,7 +37,7 @@ I knew I had to do something in my Namecheap account to bind the [frankoud.com](
     ```
     > One instance of this should be used for each 'main' domain that I want to expose. In my case, right now, that's `krab.zone` and `frankoud.com`, but eventually this will probably relate more to separate application containers in Docker.
 
-    After creating a symbolic link to this file in `/etc/nginx/sites-available` and restarting the Nginx service, I was able to reach a `gunicorn` test application listening on `http://127.0.0.1:8000` by visiting `krab.zone` from my browser. 
+    After creating a symbolic link to this file in `/etc/nginx/sites-enabled` and restarting the Nginx service, I was able to reach a `gunicorn` test application listening on `http://127.0.0.1:8000` by visiting `krab.zone` from my browser. 
 2. 
     Then it was time to add an SSL certificate to enable HTTPS. For this, I used Certbot. 
     ```
@@ -45,7 +45,7 @@ I knew I had to do something in my Namecheap account to bind the [frankoud.com](
     ```
     > Each `-d` option in this command represents a domain that will be certified. However, it is a good idea to also add subdomains to the certificate for each 'main' domain, although they can be added later on with `certbot --expand [all domains]`.
 
-    After running this command, Certbot had automatically added the links to certificates to the appropriate file in `/etc/nginx/sites-available`. Upon restarting the Nginx service, I was then able to reach the Gunicorn application through HTTPS from my browser.
+    After running this command, Certbot had automatically updated the server blocks with certificates in the appropriate files in `/etc/nginx/sites-available`, i.e. the files in which it found the server blocks specified in the `-d` options. Upon restarting the Nginx service, I was then able to reach the Gunicorn application through HTTPS from my browser.
 
 ## Useful Commands
 - `sudo nginx -t`: Check the Nginx config for syntax errors.
