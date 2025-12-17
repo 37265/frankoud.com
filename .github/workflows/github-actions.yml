@@ -27,4 +27,5 @@ jobs:
       - name: Get commit message from push event.
         if: github.event_name == 'push'
         run: |
-          echo "Commit message: ${{github.event.head_commit.message}} by ${{github.event.head_commit.author.name}}."
+          echo "Commit message: ${{github.event.head_commit.message}} by ${{github.event.head_commit.author.username}} on " \
+          "${{github.event.head_commit.timestamp}}."
