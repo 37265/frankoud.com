@@ -2,6 +2,12 @@ This document serves as a sort of developer's log / learning diary. Challenges, 
 
 # Day 1
 
+## Concepts
+- GitHub Actions (very minimal, but still)
+- Exposing RPi to the world
+- Nginx as a reverse proxy
+- Dev log
+
 ## Challenges
 
 ### 1. Binding Domain(s) to My IP Address
