@@ -18,13 +18,13 @@ jobs:
   #     - run: echo "🍏 This job's status is ${{ job.status }}."
   Update-Changelog:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: scripts
+    # defaults:
+    #   run:
+    #     working-directory: scripts
     steps:
       - name: Check out the repository.
         uses: actions/checkout@v5
       - name: Get commit message from push event.
         if: github.event_name == 'push'
         run: |
-          echo "Commit message: ${{github.event.commits.message}}"
+          echo "Commit message: ${{github.event.head_commit.message}} by ${{github.event.head_commit.author}}."
