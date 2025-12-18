@@ -10,14 +10,14 @@ This document serves as a sort of developer's log / learning diary. Challenges, 
 
 ## Challenges
 
-### 1. Binding Domain(s) to My IP Address
+###  Binding Domain(s) to My IP Address
 Initially I ran into the problem that I was quite rusty after almost a year of not really doing anything IT-related. 
 I knew I had to do something in my Namecheap account to bind the [frankoud.com](frankoud.com) domain to my IP address. 
 - I added the correct **A Record** and **CNAME Record**, but was still unable to reach my RPi from outside of my LAN.
 - Through troubleshooting I found out that I did **not** have a public IP address, so I called my ISP and got one.
 - After changing the **A Record** to the new, public IP, I was able to connect to my RPi from everywhere.
 
-### 2. Setting Up Nginx as a Reverse Proxy
+### Setting Up Nginx as a Reverse Proxy
 
 1. 
     I had no idea where to start with this, so I followed a [guide](https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-as-a-reverse-proxy-on-ubuntu-22-04) that helped me set up Nginx as a **very basic** reverse proxy server. The content shown below was placed in a `/etc/nginx/sites-available/[domain name]` file. 
