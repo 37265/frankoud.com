@@ -1,24 +1,25 @@
-# Day x
+<h2 style="text-align: center;">Day x</h2>
 
-###### dd-mm-yyyy
+<h5 style="text-align: right;">dd-mm-yyyy</h5>
 
-## Concepts
+### Concepts
 - 
 
-## Status: 
+### Status: 
 
-## Challenges
+#### Next Steps
 
-### ...
+### Challenges
 
-## Insights
+#### ...
+
+### Insights
 - 
 
-## Useful Commands
+### Useful Commands
 - 
 
-## Mental Model Updates
+### Mental Model Updates
 - 
 
-## Next Steps
 
