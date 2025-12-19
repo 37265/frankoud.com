@@ -1,5 +1,35 @@
 This document is a developer's log / learning diary. Challenges, lessons, and insights are recorded every day.
 
+# Day 3
+
+###### 19-12-2025
+
+## Concepts
+- Application servers for each domain
+- SSL certificates on the RPi
+- Firewall, Fail2ban, and other security
+- Docker Compose setup
+
+## Status
+
+## Challenges
+
+### Using Docker Compose to automate startup and shutdown
+
+## Insights
+- If Nginx is running in Docker (very common), I should never refer to containers by container name in your Nginx config. Instead, I should refer to them by the value of the name of the service in the `docker-compose.yml` file, which Docker exposes and resolves via its internal DNS. Basically, the service's name becomes what Nginx sees as the hostname.
+- When connecting the Nginx container to the existing bridge networks created for proxied servers, I should declare `existing: true` in the `networks` section of the reverse proxy server's Compose file. Otherwise, it just tries to create new ones. 
+
+## Useful Commands
+- 
+
+## Mental Model Updates
+- 
+
+## Next Steps
+
+
+
 # Day 2
 
 ###### 18-12-2025
@@ -9,7 +39,7 @@ This document is a developer's log / learning diary. Challenges, lessons, and in
 - Docker network
 - Routing requests to different proxied servers
 
-## Status: 
+## Status
 
 I have Nginx running as a reverse proxy server in a Docker container, connected to one `bridge`-type Docker network for each proxied server. I can reach each proxied server from the RPi with `curl -H "Host: server_name" 127.0.0.1` (which 'tricks' Nginx into routing the request to the correct server). 
 

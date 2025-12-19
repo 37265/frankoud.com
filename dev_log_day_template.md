@@ -1,14 +1,24 @@
 # Day x
 
+###### dd-mm-yyyy
+
 ## Concepts
 - 
 
+## Status: 
+
 ## Challenges
 
-### 1. 
+### ...
+
+## Insights
+- 
 
 ## Useful Commands
 - 
 
+## Mental Model Updates
+- 
+
 ## Next Steps
-Next time, I will work on ...
+
