@@ -17,6 +17,7 @@ Next time, I will:
 - Link the existing SSL certificates for `frankoud.com` and `krab.zone` in the separate `.conf` files that I created for them in the repo from which I run the reverse proxy server.
     - These are found in `/etc/letsencrypt/live` and should be mounted to the same path on the container (for convenience).
 - Get the apps for `frankoud.com` and `krab.zone` running behind the reverse proxy server (and `frankoud.dev`, because that should be easy after having done two already).
+- Look into [this](https://hub.docker.com/r/linuxserver/fail2ban) for Fail2ban with Docker.
 
 [This](https://www.digitalocean.com/community/tutorials/understanding-the-nginx-configuration-file-structure-and-configuration-contexts) may be useful to read as well, to better understand the Nginx config. (← Repeated from yesterday.)
 
