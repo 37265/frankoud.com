@@ -6,19 +6,26 @@ This document is a developer's log / learning diary. Challenges, lessons, and in
 
 ## Concepts
 - Application servers for each domain
+- Docker Compose setup
 - SSL certificates on the RPi
 - Firewall, Fail2ban, and other security
-- Docker Compose setup
 
 ## Status
 
 ## Challenges
 
 ### Using Docker Compose to automate startup and shutdown
+This was relatively simple. I just needed to consult the Docker docs for the Compose syntax and translate the options from yesterday's `run` commands to properties in the `docker-compose.yml` files for each container. 
+
+### Setting up UFW 
+
+Used [this guide](https://github.com/chaifeng/ufw-docker?tab=readme-ov-file#solving-ufw-and-docker-issues) to supposedly make UFW play nice with Docker. However, just allowing `80`, `443`, and `22` in UFW seems to be okay for now, because I'm not running any containers that expose any other ports than `80` anyway.
+
 
 ## Insights
 - If Nginx is running in Docker (very common), I should never refer to containers by container name in your Nginx config. Instead, I should refer to them by the value of the name of the service in the `docker-compose.yml` file, which Docker exposes and resolves via its internal DNS. Basically, the service's name becomes what Nginx sees as the hostname.
 - When connecting the Nginx container to the existing bridge networks created for proxied servers, I should declare `existing: true` in the `networks` section of the reverse proxy server's Compose file. Otherwise, it just tries to create new ones. 
+- It's a good idea to pass a `.conf` file for every application to the Nginx container, but make sure it has the `.conf` file type, so that Nginx scans it correctly.
 
 ## Useful Commands
 - 
