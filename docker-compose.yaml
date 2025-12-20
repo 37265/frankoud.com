@@ -1,12 +1,10 @@
 services:
   frankoud.com:
     image: nginx
-    ports:
-      - "80:80"
     volumes:
       - ./app:/usr/share/nginx/html
-    networks:
-      - frankoud.com
+#    networks:         â<- Change this to expose a port on 127.0.0.1
+#      - frankoud.com
 
 networks:
   frankoud.com:
