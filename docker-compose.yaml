@@ -1,14 +1,8 @@
 services:
   frankoud.com:
     image: nginx
-    ports:
-      - "80:80"
     volumes:
       - ./app:/usr/share/nginx/html
-    networks:
-      - frankoud.com
-
-networks:
-  frankoud.com:
-    name: frankoud.com
-    driver: bridge
+    ports:
+      - "127.0.0.1:3001:80"
+    restart: unless-stopped
