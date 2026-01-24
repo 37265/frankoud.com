@@ -23,7 +23,7 @@
         <p><input type="text"><button class="button">Go!</button></p>
     </div>
     
-    <ul>
+    <ul class="results">
         
     </ul>
 </body>
@@ -44,12 +44,12 @@
     }
 
     function loadResults(data) {
-    const ul = document.querySelector("ul"); // grab your <ul>
-    ul.innerHTML = ""; // clear previous results
+    const results = document.querySelector(".results"); // grab your <ul>
+    results.innerHTML = ""; // clear previous results
     data.forEach(customer => {
             const li = document.createElement("li");
             li.textContent = `${customer.id}: ${customer.name}`; // show whatever fields you have
-            ul.appendChild(li);
+            results.appendChild(li);
         });
     }
     // ---- End of GPT-generated code ----
