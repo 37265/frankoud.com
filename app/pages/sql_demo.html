@@ -43,7 +43,7 @@
     // ---- Start of GPT-generated code ----
     async function getResults() {
         const response = await fetch("/api/customers.php"); // call PHP endpoint
-        console.log(response.body());
+        console.log(response.body);
 
         // if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         // return await response.json(); // parse JSON
