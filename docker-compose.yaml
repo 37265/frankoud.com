@@ -6,29 +6,3 @@ services:
     ports:
       - "127.0.0.1:3001:80"
     restart: unless-stopped
-
-  php:
-    image: php:8.2-fpm
-    restart: unless-stopped
-    volumes:
-      - ./app:/var/www/html
-
-  mariadb:
-    image: mariadb:latest
-    restart: unless-stopped
-    environment:
-      MARIADB_ROOT_PASSWORD: greenbanana
-      MARIADB_DATABASE: InAudible
-    ports:
-      - "3306:3306"
-    volumes:
-      - ./data:/var/lib/mysql
-
-  phpmyadmin:
-    image: phpmyadmin
-    restart: unless-stopped
-    ports:
-      - "127.0.0.1:3004:80"
-
-volumes:
-  data:
