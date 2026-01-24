@@ -1,0 +1,11 @@
+body {
+    font-family: sans-serif;
+}
+.nav {
+    display: flex;
+    justify-content: space-around;
+}
+.nav a {
+    text-decoration: none;
+    font-size: 1.3em;
+}
