@@ -6,9 +6,3 @@ services:
     ports:
       - "127.0.0.1:3001:80"
     restart: unless-stopped
-    networks:
-      - backend
-
-networks:
-  backend:
-    external: true
