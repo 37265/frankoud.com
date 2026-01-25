@@ -1,3 +1,3 @@
 FROM php:8-fpm
 
-RUN apt install pdo_mysql
+RUN apt install pdo-mysql
