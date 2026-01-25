@@ -1,4 +1,3 @@
 FROM php:8-fpm
 
-RUN apt install php-pdo
-RUN apt install php-mysql
+RUN docker-php-ext-install pdo pdo_mysql
