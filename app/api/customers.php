@@ -10,5 +10,5 @@ $pdo = new PDO(
   ]
 );
 
-$stmt = $pdo->query('SELECT id, name FROM customer');
+$stmt = $pdo->query('SELECT id, name FROM Customer');
 echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
