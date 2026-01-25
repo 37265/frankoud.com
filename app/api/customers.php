@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 $pdo = new PDO(
-  'mysql:host=mariadb;dbname=InAudible;charset=utf8mb4',
+  'mysql:host=mariadb;port=3306;dbname=InAudible;charset=utf8mb4',
   'root',
   'greenbanana',
   [
