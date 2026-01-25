@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
 
   php:
-    image: php:8-fpm
+    build: ./php/
     volumes:
       - ./app:/usr/share/nginx/html
 
