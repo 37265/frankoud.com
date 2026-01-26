@@ -12,7 +12,7 @@ $pdo = new PDO(
 
 $sql = 
 'SELECT id, first_name, last_name 
-FROM Customer';
+FROM Customer;';
 
 $stmt = $pdo->query($sql);
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);

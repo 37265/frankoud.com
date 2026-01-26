@@ -33,10 +33,7 @@
 
     <div class="query-container">
         <p>Query</p>
-        <pre>
-            SELECT id, first_name, last_name 
-            FROM Customer;
-        </pre>
+        <pre class="query-string"></pre>
     </div>
 </body>
 
@@ -60,9 +57,7 @@
         const resultsList = document.querySelector(".results"); 
         resultsList.innerHTML = ""; 
         const results = data.results;
-        const query = data.query;
-
-        console.log(query);
+        const query = data.query;        
 
         if (results.length < 1) {
             const noResult = document.createElement("li");
@@ -76,5 +71,6 @@
             li.textContent = `${customer.first_name} ${customer.last_name}`;
             resultsList.appendChild(li);
         });
+        document.querySelector(".query-string").innerHTML = query;
     }
 </script>
