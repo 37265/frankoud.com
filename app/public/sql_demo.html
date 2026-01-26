@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL | Frank Oud</title>
     <link rel="stylesheet" href="../styles/default.css">
+    <link rel="stylesheet" href="../styles/sql_demo.css">
 </head>
 
 <body>
@@ -53,7 +54,7 @@
 
         if (data.length < 1) {
             const noResult = document.createElement("li");
-            noResult.innerHTML = "No results found.";
+            noResult.textContent = "No results found.";
             results.appendChild.noResult;
             return;
         }
