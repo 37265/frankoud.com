@@ -50,6 +50,8 @@
         const results = document.querySelector(".results"); 
         results.innerHTML = ""; 
 
+        console.log(data.length);
+
         if (data.length > 0) {
             data.forEach(customer => {
                 const li = document.createElement("li");
