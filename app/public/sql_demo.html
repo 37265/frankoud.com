@@ -34,10 +34,11 @@
         </p>
 
         <div>
-            <select name="query-selector" id="query-selector" onchange="executeQuery">
+            <select name="query-selector" id="query-selector">
                 <option value="none">-- Select a query --</option>
                 <option value="select-customers">Show all customers</option>
             </select>
+            <button class="button">Run</button>
         </div>
 
         <div class="query-container">
@@ -58,15 +59,13 @@
 </html>
 
 <script>
-    async function executeQuery() {
+    document.querySelector(".button").addEventListener("click", async () => {
         const query = document.getElementById("query-selector").value;
         console.log(query);
         
-        if (query !== "none") {
-            const data = await getResults(query);
-            loadResults(data);
-        }
-    }
+        const data = await getResults(query);
+        loadResults(data);
+    })
 
     async function getResults(query) {
         const response = await fetch(`/api/${query}.php`); 
