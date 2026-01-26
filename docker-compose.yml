@@ -22,7 +22,6 @@ services:
       MARIADB_ROOT_PASSWORD: greenbanana
       MARIADB_DATABASE: InAudible
     volumes:
-      # - ./data:/var/lib/mysql
       - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   phpmyadmin:
