@@ -1,4 +1,5 @@
-CREATE DATABASE IF NOT EXISTS InAudible;
+CREATE DATABASE IF NOT EXISTS InAudible
+  CHARACTER SET utf8mb4;
 
 USE InAudible;
 
@@ -9,6 +10,6 @@ CREATE TABLE IF NOT EXISTS Customer (
 );
 
 INSERT INTO Customer (first_name, last_name) VALUES
-    ("Frank", "Oud"),
-    ("Some", "Guy"),
-    ("Other", "Guy");
+    ('Frank', 'Oud'),
+    ('Some', 'Guy'),
+    ('Other', 'Guy');
