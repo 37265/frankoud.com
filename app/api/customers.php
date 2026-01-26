@@ -9,6 +9,9 @@ $pdo = new PDO(
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
   ]
 );
+$sql = 'SELECT id, first_name, last_name FROM Customer';
 
-$stmt = $pdo->query('SELECT id, first_name, last_name FROM Customer'); 
-echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+$stmt = $pdo->query($sql); 
+
+echo sizeof($stmt->fetchAll(PDO::FETCH_ASSOC));
+// echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
