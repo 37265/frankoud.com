@@ -4,6 +4,7 @@ body {
 .nav {
     display: flex;
     justify-content: space-around;
+    border-bottom: 1 px solid black;;
 }
 .nav a {
     text-decoration: none;
