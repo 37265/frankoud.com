@@ -58,8 +58,9 @@
 </html>
 
 <script>
-    async function executeQuery(query) {
+    async function executeQuery() {
         if (query !== "none") {
+            const query = document.querySelector("#query-selector").value;
             const data = await getResults(query);
             loadResults(data);
         }
