@@ -48,6 +48,9 @@
     }
 
     function loadResults(data) {
+        console.table(data);
+        console.log(data.length);
+
         const results = document.querySelector(".results"); 
         results.innerHTML = ""; 
         data.forEach(customer => {
