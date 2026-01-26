@@ -61,10 +61,11 @@
 <script>
     document.querySelector(".button").addEventListener("click", async () => {
         const query = document.getElementById("query-selector").value;
-        console.log(query);
         
-        const data = await getResults(query);
-        loadResults(data);
+        if (query !== "none") {
+            const data = await getResults(query);
+            loadResults(data);
+        }
     })
 
     async function getResults(query) {
