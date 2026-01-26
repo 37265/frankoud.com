@@ -57,20 +57,21 @@
     }
 
     function loadResults(data) {
-        const results = document.querySelector(".results"); 
-        results.innerHTML = ""; 
+        const resultsList = document.querySelector(".results"); 
+        resultsList.innerHTML = ""; 
+        const results = data.results;
 
-        if (data.length < 1) {
+        if (results.length < 1) {
             const noResult = document.createElement("li");
             noResult.textContent = "No results found.";
-            results.appendChild(noResult);
+            resultsList.appendChild(noResult);
             return;
         }
 
-        data.forEach(customer => {
+        results.forEach(customer => {
             const li = document.createElement("li");
             li.textContent = `${customer.first_name} ${customer.last_name}`;
-            results.appendChild(li);
+            resultsList.appendChild(li);
         });
     }
 </script>
