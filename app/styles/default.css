@@ -1,15 +1,45 @@
+:root {
+    --accent-colour: rgb(0, 97, 73);
+}
+
 body {
     font-family: sans-serif;
+    margin: 0;
 }
-.nav {
+
+.page-content {
     display: flex;
-    justify-content: space-around;
-    border-bottom: 2px dotted gray;
-    padding: 10px;
-    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
 }
+
+.nav {
+    border-bottom: 2px solid gray;
+    padding: 10px;
+}
+
 .nav a {
+    border-right: 2px solid gray;
+    padding-right: 5px;
+}
+
+a {
     text-decoration: none;
-    color: orangered;
-    font-size: 1.3em;
+    color: var(--accent-colour);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid gray;
+    font-size: .9rem;
 }
