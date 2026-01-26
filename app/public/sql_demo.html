@@ -42,7 +42,7 @@
         const response = await fetch("/api/customers.php"); 
         
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        console.log(response);
+        console.log(await response.body);
         
         return await response.json();
     }
