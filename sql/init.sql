@@ -3,6 +3,12 @@ CREATE DATABASE IF NOT EXISTS InAudible
 
 USE InAudible;
 
+CREATE USER IF NOT EXISTS 'inaudible'@'%' IDENTIFIED BY 'inaudible_pw';
+
+GRANT ALL PRIVILEGES ON InAudible.* TO 'inaudible'@'%';
+
+FLUSH PRIVILEGES;
+
 CREATE TABLE IF NOT EXISTS Customer (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(52) NOT NULL,

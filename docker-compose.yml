@@ -30,6 +30,6 @@ services:
     ports:
       - "127.0.0.1:3004:80"
     environment:
-      - PMA_HOST: mariadb
+      PMA_HOST: mariadb
     depends_on:
       - mariadb
