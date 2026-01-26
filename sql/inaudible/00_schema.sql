@@ -15,7 +15,3 @@ CREATE TABLE IF NOT EXISTS Customer (
     last_name VARCHAR(52) NOT NULL
 );
 
-INSERT INTO Customer (first_name, last_name) VALUES
-    ('Frank', 'Oud'),
-    ('Some', 'Guy'),
-    ('Other', 'Guy');
