@@ -37,26 +37,23 @@
 <script>
     document.querySelector(".button").addEventListener("click", async () => {
         const data = await getResults();
-        // loadResults(data);
+        loadResults(data);
     });
 
-    // ---- Start of GPT-generated code ----
     async function getResults() {
-        const response = await fetch("/api/customers.php"); // call PHP endpoint
-        console.log(await response.body);
-
-        // if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        // return await response.json(); // parse JSON
+        const response = await fetch("/api/customers.php"); 
+        
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        return await response.json();
     }
 
     function loadResults(data) {
-    const results = document.querySelector(".results"); // grab your <ul>
-    results.innerHTML = ""; // clear previous results
-    data.forEach(customer => {
-            const li = document.createElement("li");
-            li.textContent = `${customer.id}: ${customer.name}`; // show whatever fields you have
-            results.appendChild(li);
-        });
+        const results = document.querySelector(".results"); 
+        results.innerHTML = ""; 
+        data.forEach(customer => {
+                const li = document.createElement("li");
+                li.textContent = `${customer.id}: ${customer.first_name} ${customer.last_name}`;
+                results.appendChild(li);
+            });
     }
-    // ---- End of GPT-generated code ----
 </script>
