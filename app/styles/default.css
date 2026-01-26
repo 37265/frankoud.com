@@ -4,7 +4,9 @@ body {
 .nav {
     display: flex;
     justify-content: space-around;
-    border-bottom: 1 px solid black;;
+    border-bottom: 2px dotted gray;
+    padding: 10px;
+    margin-bottom: 10px;
 }
 .nav a {
     text-decoration: none;
