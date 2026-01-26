@@ -48,11 +48,16 @@
     }
 
     function loadResults(data) {
-        console.table(data);
-        console.log(data.length);
-
         const results = document.querySelector(".results"); 
         results.innerHTML = ""; 
+
+        if (data.length < 1) {
+            const noResult = document.createElement("li");
+            noResult.innerHTML = "No results found.";
+            results.appendChild.noResult;
+            return;
+        }
+
         data.forEach(customer => {
                 const li = document.createElement("li");
                 li.textContent = `${customer.id}: ${customer.first_name} ${customer.last_name}`;
