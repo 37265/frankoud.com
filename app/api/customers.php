@@ -3,8 +3,8 @@ header('Content-Type: application/json');
 
 $pdo = new PDO(
   'mysql:host=mariadb;port=3306;dbname=InAudible;charset=utf8mb4',
-  'root',
-  'greenbanana',
+  'inaudible',
+  'inaudible_pw',
   [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
   ]
