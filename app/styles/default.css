@@ -1,5 +1,5 @@
 :root {
-    --accent-colour: rgb(0, 97, 73);
+    --accent-colour: rgb(0, 134, 101);
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 
 .nav a {
     border-right: 2px solid gray;
-    padding-right: 5px;
+    padding: 0 10px;
 }
 
 a {
