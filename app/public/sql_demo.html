@@ -26,15 +26,16 @@
     </div>
 
     <div class="results-container">
-        <ul class="results">
+        <div class="query-container">
+            <p>Query</p>
+            <pre class="query-string"></pre>
+        </div>
+
+        <ul class="results-list">
             
         </ul>
     </div>    
 
-    <div class="query-container">
-        <p>Query</p>
-        <pre class="query-string"></pre>
-    </div>
 </body>
 
 </html>
@@ -54,7 +55,7 @@
     }
 
     function loadResults(data) {
-        const resultsList = document.querySelector(".results"); 
+        const resultsList = document.querySelector(".results-list"); 
         resultsList.innerHTML = ""; 
         const results = data.results;
         const query = data.query;        
