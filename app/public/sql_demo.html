@@ -60,6 +60,9 @@
         const resultsList = document.querySelector(".results"); 
         resultsList.innerHTML = ""; 
         const results = data.results;
+        const query = data.query;
+
+        console.log(query);
 
         if (results.length < 1) {
             const noResult = document.createElement("li");
