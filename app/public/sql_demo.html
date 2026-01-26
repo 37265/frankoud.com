@@ -25,15 +25,27 @@
     <div class="page-content">
         <h1>SQL Demo</h1>
 
-        
+        <p>
+            <span class="bold">About this demo:</span><br>
+            I used MariaDB and PHPMyAdmin to set up and configure the database behind this demo.<br>
+            Below, you can select one of the queries on the database.<br><br>
+            When a query is selected, it is executed and the results are shown below.<br>
+            The SQL for the query is also displayed.
+        </p>
 
-        <button class="button">Go!</button>
+        <div>
+            <select name="query-selector" id="query-selector" onchange="executeQuery">
+                <option value="none">-- Select a query --</option>
+                <option value="select-customers">Show all customers</option>
+            </select>
+        </div>
+
         <div class="query-container">
-            <p>Query</p>
+            <p class="bold">SQL</p>
             <pre class="query-string"></pre>
         </div>
         <div class="results-list-container">
-            <p>Results</p>
+            <p class="bold">Results</p>
             <ul class="results-list"></ul>
         </div>
 
@@ -46,15 +58,19 @@
 </html>
 
 <script>
-    document.querySelector(".button").addEventListener("click", async () => {
-        const data = await getResults();
-        loadResults(data);
-    });
+    async function executeQuery(query) {
+        if (query !== "none") {
+            const data = await getResults(query);
+            loadResults(data);
+        }
+    }
 
-    async function getResults() {
-        const response = await fetch("/api/customers.php"); 
+    async function getResults(query) {
+        const response = await fetch(`/api/${query}.php`); 
         
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
         
         return await response.json();
     }
