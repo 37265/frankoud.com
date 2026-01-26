@@ -42,6 +42,8 @@
         const response = await fetch("/api/customers.php"); 
         
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        console.log(response);
+        
         return await response.json();
     }
 
@@ -49,17 +51,16 @@
         const results = document.querySelector(".results"); 
         results.innerHTML = ""; 
 
-        if (data.length < 1) {
-            const noResult = document.createElement("li");
-            noResult.textContent = "No results found.";
-            results.appendChild.noResult;
-            return;
-        }
-
-        data.forEach(customer => {
+        if (data.length > 0) {
+            data.forEach(customer => {
                 const li = document.createElement("li");
                 li.textContent = `${customer.id}: ${customer.first_name} ${customer.last_name}`;
                 results.appendChild(li);
             });
+        }
+
+        const noResult = document.createElement("li");
+        noResult.textContent = "No results found.";
+        results.appendChild.noResult;
     }
 </script>
