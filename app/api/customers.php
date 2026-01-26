@@ -21,4 +21,4 @@ $response = [
   "results" => $results
 ];
 
-echo json_encode(value: $data);
+echo json_encode(value: $response);
