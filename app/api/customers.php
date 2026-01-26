@@ -12,6 +12,4 @@ $pdo = new PDO(
 $sql = 'SELECT id, first_name, last_name FROM Customer';
 
 $stmt = $pdo->query($sql); 
-
-echo sizeof($stmt->fetchAll(PDO::FETCH_ASSOC));
-// echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));

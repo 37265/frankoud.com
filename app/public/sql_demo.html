@@ -35,14 +35,13 @@
 <script>
     document.querySelector(".button").addEventListener("click", async () => {
         const data = await getResults();
-        // loadResults(data);
+        loadResults(data);
     });
 
     async function getResults() {
         const response = await fetch("/api/customers.php"); 
         
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        console.log(await response.body);
         
         return await response.json();
     }
