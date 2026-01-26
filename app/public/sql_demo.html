@@ -50,18 +50,17 @@
         const results = document.querySelector(".results"); 
         results.innerHTML = ""; 
 
-        console.log(data.length);
-
-        if (data.length > 0) {
-            data.forEach(customer => {
-                const li = document.createElement("li");
-                li.textContent = `${customer.id}: ${customer.first_name} ${customer.last_name}`;
-                results.appendChild(li);
-            });
+        if (data.length < 1) {
+            const noResult = document.createElement("li");
+            noResult.textContent = "No results found.";
+            results.appendChild(noResult);
+            return;
         }
 
-        const noResult = document.createElement("li");
-        noResult.textContent = "No results found.";
-        results.appendChild(noResult);
+        data.forEach(customer => {
+            const li = document.createElement("li");
+            li.textContent = `${customer.id}: ${customer.first_name} ${customer.last_name}`;
+            results.appendChild(li);
+        });
     }
 </script>
