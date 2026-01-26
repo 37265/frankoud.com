@@ -1,3 +1,8 @@
 .results {
     list-style: decimal;
 }
+
+.results-container {
+    display: flex;
+    justify-content: center;
+}
