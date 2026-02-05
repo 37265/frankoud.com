@@ -42,8 +42,7 @@ CREATE TABLE IF NOT EXISTS Customer (
   email_address VARCHAR(255) NOT NULL,
   birth_date DATE NOT NULL,
   status ENUM('active', 'suspended', 'deleted', 'to_delete') NOT NULL,
-  created_at TIMESTAMP NOT NULL,
-  deleted TINYINT(1) DEFAULT (0),
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   deleted_at TIMESTAMP,
   address_id INT,
   PRIMARY KEY (id),
@@ -76,11 +75,11 @@ CREATE TABLE Subscription (
   discount_id INT,
   PRIMARY KEY (id),
   FOREIGN KEY (customer_id) 
-    REFERENCES Customer(id),
-    ON DELETE NO ACTION
+    REFERENCES Customer(id)
+    ON DELETE NO ACTION,
   FOREIGN KEY (plan_id) 
-    REFERENCES Plan(id),
-    ON DELETE NO ACTION
+    REFERENCES Plan(id)
+    ON DELETE NO ACTION,
   FOREIGN KEY (discount_id) 
     REFERENCES Discount(id)
     ON DELETE SET NULL
