@@ -9,6 +9,17 @@ GRANT ALL PRIVILEGES ON InAudible.* TO 'inaudible'@'%';
 
 FLUSH PRIVILEGES;
 
+/*
+KEEP IN MIND:
+- VARCHAR limits should make sense
+- Set up business rules before writing DDL (justify choices)
+- Create PK/FK indices 
+- Let ON UPDATE/ON DELETE flow from business rules
+- Let (NOT) NULL flow from business rules
+- Give ENUM columns a default value
+- Which columns should containe unique values (even if not PK)?
+*/
+
 CREATE TABLE IF NOT EXISTS Address (
   id INT AUTO_INCREMENT,
   street VARCHAR(30) NOT NULL, /* The longest possible street name is 28 characters */
@@ -43,7 +54,7 @@ CREATE TABLE IF NOT EXISTS Customer (
   birth_date DATE NOT NULL,
   status ENUM('active', 'suspended', 'deleted', 'to_delete') NOT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  deleted_at TIMESTAMP,
+  deleted_at TIMESTAMP DEFAULT null,
   address_id INT,
   PRIMARY KEY (id),
   UNIQUE (email_address), /* Because e-mail addresses will likely be used for login*/
